@@ -56,3 +56,20 @@ class DetailViewController: UIViewController {
         }
     }
 }
+
+//extension DetailViewController: UIViewControllerAnimatedTransitioning {
+//    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+//        return 3
+//    }
+//    
+//    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+//        // TODO
+//    }
+//}
+
+extension DetailViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        let presentationController = PresentationController(presentedViewController: presented, presenting: presenting)
+        return presentationController
+    }
+}

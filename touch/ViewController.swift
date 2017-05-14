@@ -58,13 +58,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         
         // push view controller
-        navigationController?.pushViewController(dvc, animated: true)
+//        navigationController?.pushViewController(dvc, animated: true)
         
 
         // present modal view
         dvc.preferredContentSize = CGSize.init(width: 100, height: 100)
         dvc.modalPresentationStyle = UIModalPresentationStyle.custom
-//        dvc.modalTransitionStyle = UIModalTransitionStyle.c
+        dvc.transitioningDelegate = dvc
         present(dvc, animated: true) {
         }
     }
